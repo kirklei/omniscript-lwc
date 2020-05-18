@@ -1,0 +1,95 @@
+<template>
+  <div
+    if:true={selectedState}
+    class="slds-col slds-size_1-of-3 slds-show_inline-block slds-p-horizontal_medium"
+  >
+    <div
+      class="slds-carda via-slds-card--activea slds-m-bottom_smalla slds-m-right_smalla kirk"
+    >
+      <header
+        class="slds-media slds-media_center slds-has-flexi-truncate slds-p-around_small c-cma-max-height"
+      >
+        <div class="slds-media__figure" if:true={leftIconObj.hasIcon}>
+          <span class={leftIconObj.iconClass} title="contact">
+            <vlocity_cmt-icon
+              size="large"
+              variant={leftIconObj.iconVariant}
+              icon-name={leftIconObj.iconName}
+            ></vlocity_cmt-icon>
+          </span>
+        </div>
+        <div if:true={leftImageFromAttachment} class="slds-media__figure">
+          <img src={leftImageFromAttachment} style={session.imageStyle} />
+        </div>
+        <div if:true={session.leftImage} class="slds-media__figure">
+          <img src={session.leftImage} style={session.imageStyle} />
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title" if:true={firstField}>
+            <vlocity_cmt-output-field
+              class="outputFieldText"
+              record={obj}
+              field-name={firstField.name}
+            ></vlocity_cmt-output-field>
+          </h2>
+          <div
+            key={field.name}
+            for:each={restField}
+            for:item="field"
+            for:index="index"
+          >
+            <vlocity_cmt-output-field
+              class="outputFieldText"
+              record={obj}
+              field-name={field.name}
+            ></vlocity_cmt-output-field>
+          </div>
+          <div>
+            <template if:true={session.isSmartAction}>
+              <div
+                class="slds-p-right_medium slds-p-vertical_xx-small slds-float_left"
+              >
+                <vlocity_cmt-action
+                  state-obj={obj}
+                  context-id={contextId}
+                  s-object-type={sObjectType}
+                  state-action={smartActionObj}
+                ></vlocity_cmt-action>
+              </div>
+            </template>
+            <template
+              if:true={actionsToDisplay}
+              for:each={actionsToDisplay}
+              for:item="item"
+            >
+              <div
+                key={item.id}
+                class="slds-p-right_medium slds-p-vertical_xx-small slds-float_left slds-m-top_small"
+              >
+                <vlocity_cmt-action
+                  state-obj={obj}
+                  context-id={contextId}
+                  s-object-type={sObjectType}
+                  state-action={item}
+                >
+                </vlocity_cmt-action>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="slds-media__figure" if:true={rightIconObj.hasIcon}>
+          <span class={rightIconObj.iconClass} title="contact">
+            <vlocity_cmt-icon
+              size="large"
+              variant={rightIconObj.iconVariant}
+              icon-name={rightIconObj.iconName}
+            ></vlocity_cmt-icon>
+          </span>
+        </div>
+        <div if:true={session.rightImage} class="slds-media__figure">
+          <img src={session.rightImage} style={session.imageStyle} />
+        </div>
+      </header>
+    </div>
+  </div>
+</template>

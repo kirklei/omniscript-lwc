@@ -1,0 +1,46 @@
+<template>
+ <div class="panel panel-default jesse-products-selectable slds-grid slds-wrap slds-grid--pull-padded">
+    <div>{Title}</div>
+    <template for:each={displayRows} for:item="displayrow">
+        <!-- class={displayrow.name} -->
+       <div key={displayrow.index} data-item={displayrow.index} onclick={handleSelection} class={displayrow.cssclass}>
+           <!--
+            <td class="slds-cell-shrink">
+                <lightning-input type="checkbox" variant="label-hidden" 
+                  checked={displayrow.checked} name={displayrow.tagname}
+                  data-key={displayrow.index} label="dataCheckbox" onchange={handleSelection}>
+                </lightning-input>
+            </td>
+            -->
+            <!-- convert the map to a list, and then display it -->
+            <!--
+            <td>{displayrow.name}</td>
+            <td>{displayrow.city}</td>
+            <td>{displayrow.color}</td>
+            -->
+        <span class="product-name product-text">{displayrow.name}</span>
+        <div class="product-name product-rate">{displayrow.price} <!--{{product.mrcprice * 100 | number}}-->¢ /kWh</div>
+        <div class="slds-image nspiimage">
+            <!--
+                <img src="../resource/VDOProductResources/images/Shield.png" width="140" ng-if="product.productName == 'Electricity Prepaid'">
+                <img src="../resource/1580239375000/LightbulbHandresized" width="140" ng-if="product.productName == 'Time-Of-Use Electricity'">
+            -->
+                <img src={displayrow.image} width="140">
+        </div>
+        <!-- <br> -->
+        <br>
+        <span class="product-term product-text">{displayrow.description}</span>
+        <!--
+        <div ng-click="viewProductDetails(product)" class="product-details product-btn">
+            Show Details
+        </div>-->
+        
+        <div class="product-details product-btn-select">
+            Select
+        </div>
+        <br>
+        <br>
+        </div>
+    </template>
+ </div>
+ </template>

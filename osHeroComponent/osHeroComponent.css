@@ -1,0 +1,44 @@
+/*osHeroComponent.css*/
+.image-wrapper {
+    background: blue;
+    display: inline-block;
+   
+}
+
+.image-wrapper img {
+   mix-blend-mode: screen;
+    filter: grayscale(100%);
+}
+    .hero-div {
+        width: 800px;
+        height:500px; 
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .hero-image-background {
+        
+    }
+    .hero-text {
+        font-size:48px;
+        font-family: "Serif","Georgia"; 
+        font-weight: 300;
+        text-align: left;
+        color:rgb(255,255,255);
+        margin-bottom:1.5em;
+    }
+    .hero-smaller-text {
+        font-size:20px;
+        font-family: "Tahoma","Sans-Serif"; 
+        font-weight: 300;
+        text-align: left;
+        color:rgb(255,255,255);  
+        margin-bottom:1em;
+    }
+    .shadow {
+        text-shadow:2px 2px 2px #333; 
+    }
+    .box {
+       padding-top:3em;
+        padding-left:3em;
+    }

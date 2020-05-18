@@ -1,0 +1,12 @@
+/*overriding.css*/
+.kirk {
+border-right-width: 1px !important;
+    border-left-width: 1px !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 1px !important;
+    border-right-color: #ff0000!important;
+    border-left-color: rgb(221, 219, 218)!important;
+    border-top-color: rgb(221, 219, 218)!important;
+    border-bottom-color: rgb(221, 219, 218)!important;
+    border-radius: .25rem!important;
+}

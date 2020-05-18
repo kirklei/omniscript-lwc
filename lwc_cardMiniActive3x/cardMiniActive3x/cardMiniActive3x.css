@@ -1,0 +1,25 @@
+.outputFieldText {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c-cma-max-height {
+  max-height: 132px;
+}
+
+.slds-card.via-slds-card--active.slds-m-bottom_small.slds-m-right_small.c-cma-max-height{
+border-right-width: 1px !important;
+    border-left-width: 1px !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 1px !important;
+    border-right-color: #ff0000!important;
+    border-left-color: rgb(221, 219, 218)!important;
+    border-top-color: rgb(221, 219, 218)!important;
+    border-bottom-color: rgb(221, 219, 218)!important;
+    border-radius: .25rem!important;
+}
